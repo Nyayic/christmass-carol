@@ -1,0 +1,34 @@
+# Loading previous buffer contents. Please wait...
+use_bpm 65
+
+#drum beat
+live_loop :drums do
+  sample :drum_heavy_kick
+  sleep 1
+  sample :sn_dolf
+  sleep 1
+end
+
+live_loop :sample do
+  sync :drums
+  sample :loop_compus, beat_stretch:8
+  sleep 8
+end
+
+#adding base
+live_loop :base do
+  sync :drums
+  use_synth :chipbass
+  #add louder sample
+  sample :bd_sone, amp: 3
+  #use amp to choose the loudness of the bass
+  play chord(:c2, :minor).choose, sustain: 7, amp: 0.7
+  sleep 8
+end
+
+#adding sound effects
+live_loop :effects do
+  sync :drums
+  sample choose([:elec_blip2, :elec_twip])
+  sleep 2
+end
