@@ -1,0 +1,40 @@
+# Welcome to Sonic Pi v2.10
+use_bpm 120
+use_synth :pulse
+
+define :intro do
+  #Music Goes here
+  notes = [:c4, :c4]
+  durations = [0.5, 0.5]
+  play_pattern_timed notes, durations
+  
+end
+
+define :partridge do
+  
+end
+
+define :item do
+  #Music Goes here
+  notes = [:c4, :g4, :a4, :bb4, :g4]
+  durations = [1,0.5, 0.5,0.5,0.5]
+  play_pattern_timed notes, durations
+end
+
+define :five_gold_rings do
+  notes = [:c5, :d4, :b4, :c5]
+  durations = [2,1,1, 2]
+  play_pattern_timed notes, durations
+  sleep 0.5
+end
+
+define :four_three_two do
+  notes = [:c5, :bb4, :a4, :g4, :f4, :bb4, :d4, :f4,:g4,:f4,:e4,:d4,:c4]
+  durations = [0.5,0.5,0.5,0.5,1,1,0.5,0.5,1,0.5,0.5,0.5,0.5,1]
+  play_pattern_timed notes, durations
+  sleep 0.5
+end
+
+intro
+sleep 0.5
+partridge
